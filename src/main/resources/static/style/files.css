@@ -1,0 +1,58 @@
+
+.files-row{
+    border-radius: 50px;
+    border: 2px #0E0F1C solid;
+}
+
+.card{
+    background-color: #0E0F1C;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.card-subtitle{
+    font-family: 'Times New Roman', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 125.52%;
+    /* or 20px */
+    text-align: center;
+    letter-spacing: 0.055em;
+    background-color: #30373C;
+
+}
+
+.files-row-tag{
+    color: #0E0F1C;
+}
+
+.nav-tag-mobile-txt{
+    font-family: 'Times New Roman', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    /* identical to box height, or 36px */
+    text-align: center;
+}
+
+.nav-tag-mobile{
+    padding: 10px;
+    border: 2px white solid;
+    border-radius: 20px;
+}
+
+.link{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.mobile-tags-body{
+    border: 2px solid black;
+    background-color: #0E0F1C;
+}

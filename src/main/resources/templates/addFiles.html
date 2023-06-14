@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    li {
+        border: 1px black;
+    }
+</style>
+<div>
+    <ul th:each="message : ${messageList}">
+        <li>
+            <div>
+                <span th:text="${message.messageId}"></span><br>
+                <span th:text="${message.category}"></span><br>
+                <span th:text="${message.sendAt}"></span><br>
+                <a th:href="@{/attachment/watch/{id}(id = ${message.messageId})}"> Открыть</a>
+                <a th:href="@{/download/file/{id}(id = ${message.messageId})}" download>Скачать</a>
+                <br><br>
+            </div>
+
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width = device-width, initial-scale = 1.0">
+    <link href="../bootstrap/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="../style/template.css"
+          rel="stylesheet">
+    <link href="../style/send-files.css"
+          rel="stylesheet">
+</head>
+<body>
+
+<header class="container-fluid d-none d-lg-block">
+    <div class="row h-auto vh-25">
+        <div class="col d-flex justify-content-center align-items-center">
+            <img src="/img/svg/logo.svg" alt="Logo" class="img-fluid logo" href="https://t.me/regulexper"><br>
+            <h1 class="text-center mx-3 my-0 head-text">Рукастые ребята со светлыми лицами</h1>
+        </div>
+        <nav>
+            <ul id="nav-lg">
+                <li><a href="index.html">Главная</a></li>
+                <li><a th:href="@{/files}">Файлы</a></li>
+                <li><a href="files.html">Мерч</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<header class="d-block d-sm-block d-md-block d-lg-none mobile-header">
+    <div class="row h-auto vh-25">
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <img src="/img/svg/logo.svg" alt="Logo" class="img-fluid logo"><br>
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <h1 class="text-center text-white mx-3 my-0 head-text-mobile">Рукастые ребята со светлыми лицами</h1>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center mx-auto">
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="index.html" class="mobile-nav-a text-white">Главная</a>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="files.html" class="mobile-nav-a text-white">Файлы</a>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="files.html" class="mobile-nav-a text-white">Мерч</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--
+<div class="container d-block d-sm-block d-md-block d-lg-none dummy">
+    <div class="row">
+        <div class="col-12 mb-2">
+            title
+            <div class="row">
+
+                <div class="col-12 d-flex justify-content-center align-content-center">
+                    <h2 class="text-white text-center">Вы можете внести свой вклад в Победу,
+                        отправив ваши наработки. В
+                        случае одобрения они будут выложены на сайт.</h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <ul>
+                            <li>В общих чертах опишите идею, для чего предназначены, способы реализации.</li>
+                            <li>Если вы отправляете архив, опишите его структуру. Что и в какой папке находится. В
+                                описании
+                                перечислите теги или ключевые слова.
+                            </li>
+                            <li>Идеи для 3D-печати должны быть опробованы вами лично! Напечатайте, оцените затраты
+                                пластика,
+                                времени, труда, протестируйте модель, опишите результат. Модели без видео с тестами
+                                рассмотрены не
+                                будут!
+                            </li>
+                            <li>Модели хвостовиков для ВОГ, РГД, Ф1 не рассматриваются. Ими вы можете поделиться в нашем
+                                <a href="https://t.me/concillor_bot"
+                                   title="Доступ через бота."> чате.</a>.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <form method="post" class="form" style="border: white 2px solid"><br><br>
+                        <div class="row">
+
+                            <div class="col-12">
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <span>Ваш e-mail:</span>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <input class="w-100" type="email" placeholder="Введите ваш email"> <br><br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <br><br>
+                            <div class="col-12">
+                                <div class="row">
+
+                                    <div class="col-12">
+                                        <span class="description-title text-center">Рекомендуем скопировать описание из блокнота, чтобы вам было удобнее</span><br>
+                                        <span>Описание: </span><br>
+                                    </div>
+
+                                    <div class="col-12 d-flex justify-content-center align-content-center">
+                                        <textarea class="ml-4" minlength="100"
+                                                  maxlength="1000"
+                                                  placeholder="Краткое описание вашей идеи. От 100 до 1000 символов."
+                                                  rows="5"
+                                                  cols="40"></textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <br><br>
+                            <div class="col-12 mt-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span>Выберите файл</span> <input type="file" class="file-input"
+                                                                          value="Выбрать файл" title="" accept="application/msword, application/pdf,
+                                         application/zip, multipart/x-zip">
+                                    </div>
+
+                                    <div class="col-6">
+                                        Допустимы файлы форматов: .dot .doc .docx .pdf .zip
+                                    </div>
+                                </div>
+
+                            </div>
+                            <br><br>
+                            <div class="col-12 mt-2">
+                                <div class="row d-flex justify-content-center align-content-center">
+
+                                    <div class="col-6 d-flex justify-content-center align-content-center">
+                                        <input type="submit" class="submit-mobile" value="Отправить"> <br><br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+-->
+
+<div class="container d-none d-lg-block">
+    <div class="form-wrapper form">
+        <div class="form-header"><p class="header-text  text-white text-center">Вы можете внести свой вклад в Победу,
+            отправив ваши наработки. В
+            случае одобрения они будут выложены на сайт.</p></div>
+        <div class="row form-inner">
+            <div class="col-6"><br><br>
+                <form method="post"
+                      class="send-form"
+                      id="send-form"
+                      th:object="${formMessage}"
+                      enctype="multipart/form-data"
+                      th:action="${feedback}">
+                    <span class="label-text">Ваш e-mail:</span><input type="email" th:field="*{email}"
+                                                                      class="send-input"><br><br>
+
+                    <span class="label-text">Категория обращения:</span>
+                    <select th:field="*{category}">
+                        <option th:value="3D-печать">3D-печать</option>
+                        <option th:value="Тактика">Тактика</option>
+                        <option th:value="Медицина">Медицина</option>
+                        <option th:value="Инструкции">Инструкции</option>
+                        <option th:value="Другое">Другое</option>
+                    </select>
+                    <span class="label-text">Описание:</span><br><textarea class="tittle-input" minlength="100"
+                                                                           maxlength="1000"
+                                                                           placeholder="Краткое описание вашей идеи. От 100 до 1000 символов. Обратите внимание на текст справа!"
+                                                                           rows="5"
+                                                                           cols="40"
+                                                                           th:field="*{fileDescription}"
+                                                                           ></textarea><br><br>
+                    <span class="label-text">Приложите файл:</span><input type="file" class="file-input"
+                                                                          name="file" id="file"
+                                                                          value="Выбрать файл" title="" accept="multipart/x-zip"><br><br>
+
+                    <p class="text-white">Допустимы файлы форматов: <i>.dot .doc .docx .pdf .zip</i></p>
+                </form>
+            </div>
+            <div class="col-6">
+                <div class="help-txt">
+                    <p class="help-header">Советы:</p>
+                    <ul class="helps">
+                        <li>В общих чертах опишите идею, для чего предназначены, способы реализации.</li>
+                        <li>Если вы отправляете архив, опишите его структуру. Что и в какой папке находится. В описании
+                            перечислите теги или ключевые слова.
+                        </li>
+                        <li>Идеи для 3D-печати должны быть опробованы вами лично! Напечатайте, оцените затраты пластика,
+                            времени, труда, протестируйте модель, опишите результат. Модели без видео с тестами
+                            рассмотрены не
+                            будут!
+                        </li>
+                        <li>Модели хвостовиков для ВОГ, РГД, Ф1 не рассматриваются. Ими вы можете поделиться в нашем
+                            <span
+                                    class="chat-txt"><a href="https://t.me/concillor_bot"
+                                                        title="Доступ через бота."> чате.</a></span>.
+                        </li>
+                    </ul>
+                    <input type="submit" value="Помочь!" class="submit" form="send-form" onclick="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="container-fluid">
+    <div class="row foo">
+        <div class="col col-md-4 col-lg-4">
+            <h4 class="text-white">Мы в соцсетях:</h4><br>
+            <a href="https://t.me/makers2fron" class="text-white">Телеграм-канал</a><br><br>
+            <a href="https://t.me/concillor_bot" class="text-white">Телеграм-бот</a>
+        </div>
+
+        <div class="col col-md-4 col-lg-4">
+            <a href="send-files.html" class="text-white">Предложить файл</a><br><br>
+            <a href="donat.html" class="text-white">Поддержать проект</a>
+        </div>
+
+        <div class="col col-md-4 col-lg-4">
+            <h4 class="text-white text-end">Разработчик:</h4><br>
+            <img href="https://t.me/regulexper" class="qr-footer" src="/img/svg/developer_qr.svg" alt=" ">
+        </div>
+    </div>
+</footer>
+<script src="/scripts/send.js"></script>
+<script src="/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

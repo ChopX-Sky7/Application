@@ -1,0 +1,27 @@
+.file-info{
+    background-color: #0E0F1C;
+    height: 750px;
+    border-radius: 35px;
+    padding-top: 100px;
+    padding-left: 70px;
+}
+.inner{
+    height: 18rem;
+}
+
+.left-part .right-part{
+    border: 2px #00EEEE;
+}
+.left-part{
+   /* background-image: url(".");
+    overflow: clip;*/
+}
+
+.file-img{
+    width: 500px;
+
+}
+
+.mobile-card{
+    background-color: #0E0F1C;
+}

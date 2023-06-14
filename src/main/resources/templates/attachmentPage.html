@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span th:text="${message.messageId}"></span><br>
+<span th:text="${message.isConfirmed}"></span><br>
+<span th:text="${message.hasFile}"></span><br>
+<span th:text="${message.fileDescription}"></span><br>
+<span th:text="${message.fileLink}"></span><br>
+<span th:text="${message.size}"></span><br>
+<span th:text="${message.email}"></span><br>
+<span th:text="${message.sendAt}"></span><br>
+<span th:text="${message.category}"></span><br>
+<hr>
+
+<form  th:action="@{/attachment/confirm/{id}(id = ${message.messageId})}"
+ th:object="${att}" method="post" enctype="multipart/form-data">
+
+    <input th:field="*{name}" type="text"/><br><br>
+    <input th:field="*{fileDescription}" type="text"/><br><br>
+
+    <select th:field="*{mainTag}">
+        <option th:value="3D-печать">3D-печать</option>
+        <option th:value="Тактика">Тактика</option>
+        <option th:value="Медицина">Медицина</option>
+        <option th:value="Инструкции">Инструкции</option>
+        <option th:value="Другое">Другое</option>
+    </select><br><br>
+
+    <input type="file" name="file" id="file" accept="image/png">
+
+    <input type="number" min="0" max="" th:field="*{isMain}" value="true">Добавить на главную?</input>
+    <br><br>
+    <input type="submit">Подтвердить</input>
+</form>
+
+
+
+</form>
+
+
+
+</body>
+</html>

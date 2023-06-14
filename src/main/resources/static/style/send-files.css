@@ -1,0 +1,102 @@
+.form-body{
+    background-color: #0E0F1C;
+}
+
+.header-text{
+    font-family: 'Times New Roman', Serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 125.52%;
+    letter-spacing: 0.085em;;
+}
+
+.form-wrapper{}
+
+.form-header{
+    background-color: #0E0F1C;
+    padding-top: 50px;
+}
+
+.form-inner{
+    border:2px solid #00EEEE ;
+    border-radius: 34px;
+    padding: 25px;
+
+}
+
+.label-text {
+    color: #FFFFFF;
+}
+
+.form{
+    border-radius: 34px;
+    padding: 15px;
+    background-color: #0E0F1C;
+}
+
+.send-form{
+    background-color: #0E0F1C;
+    border-radius: 34px;
+}
+
+.help-txt{
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 125.52%;
+    /* or 50px */
+
+    letter-spacing: 0.085em;
+
+    color: #FFFFFF;
+}
+
+
+.file-input{
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 125.52%;
+    letter-spacing: 0.085em;
+
+    border-radius: 11px 11px 11px 11px ;
+    margin: 15px;
+    color: transparent;
+    background-color: #0E0F1C;
+}
+
+.submit {
+    position: relative;
+    left: 75%;
+    margin-bottom: 30px;
+    background: #FFFFFF;
+    border-radius: 11px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.dummy {height: auto; background-color: #0E0F1C}
+
+.description-title{
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 125.52%;
+    /* or 50px */
+    opacity: 40%;
+
+    letter-spacing: 0.085em;
+
+
+}
+
+.submit-mobile{
+    background: #FFFFFF;
+    border-radius: 11px;
+    border: 1px solid black;
+    padding: 10px;
+}

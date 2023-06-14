@@ -1,0 +1,115 @@
+
+.form-wrapper {
+    width: 1212px;
+    border-radius: 34px;
+    background: #0E0F1C;
+}
+.form-header {
+    display: flex;
+    justify-content: center;
+    /*padding: 10px;*/
+    background-color: #0E0F1C;
+    border-radius: 34px;
+}
+
+.btn    {
+    box-shadow: none;
+    background-color: #0077C2;
+    color: #fff;
+    border-radius: 11px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 25px;
+    width: 25%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify-all;
+}
+.btn-text {
+    margin: 0;
+    font-family: 'Times New Roman';
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    /* line-height: 125.52%;*/
+    /* or 60px */
+    text-align: center;
+    color: #FFFFFF;
+}
+.form-body {
+    height: auto;
+    padding: 15px;
+    background: #0E0F1C;
+    border-radius: 34px;
+}
+
+.container-content {
+    height: 50%;
+    padding: 50px;
+}
+.form-txt{
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 125.52%;
+    /* or 60px */
+    margin-bottom: 40px;
+    text-align: left;
+    color: #FFFFFF;
+}
+.link{
+    color: #00EEEE;
+
+}
+.copy-input{
+    cursor: pointer;
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 125.52%;
+    text-align: justify;
+    border: 5px solid #0077C2;
+    border-radius: 26px;
+}
+
+.qr {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    float: right;
+}
+
+#don-div{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.sm-slide{
+    background-image: url(img/svg/sm-card-1.svg);
+    width: 330px;
+    height: 450px;
+}
+
+.form-mobile{
+    background-color: #0E0F1C;
+    padding: 20px;
+}
+
+.btn-m{
+    background-color: #0077C2 ;
+    box-shadow: none;
+    border-radius: 11px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 25px;
+    width: 25%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify-all;
+
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+  <form  th:action="@{/attachment/add}"
+         th:object="${att}" method="post" enctype="multipart/form-data">
+
+    <input th:field="*{name}" type="text"/><br><br>
+    <input th:field="*{fileDescription}" type="text"/><br><br>
+
+    <select th:field="*{mainTag}">
+      <option th:value="3D-печать">3D-печать</option>
+      <option th:value="Тактика">Тактика</option>
+      <option th:value="Медицина">Медицина</option>
+      <option th:value="Инструкции">Инструкции</option>
+      <option th:value="Другое">Другое</option>
+    </select><br><br>
+
+    <input type="file" name="preview" id="preview" accept="image/png">
+    <input type="file" name="content" id="content" accept="image/png">
+
+    <input type="number" min="1" max="5" th:field="*{priority}" value="true">Добавить на главную?</input>
+    <br><br>
+    <input type="submit" value="Добавить">
+  </form>
+
+
+</body>
+</html>

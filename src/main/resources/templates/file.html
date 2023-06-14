@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="ru"
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width = device-width, initial-scale = 1.0">
+    <link href="../static/bootstrap/bootstrap.min.css"
+          rel="stylesheet">
+    <link href="../static/style/template.css"
+          rel="stylesheet">
+    <link href="../static/style/file.css"
+          rel="stylesheet">
+</head>
+<body>
+<header class="container-fluid d-none d-lg-block">
+    <div class="row h-auto vh-25">
+        <div class="col d-flex justify-content-center align-items-center">
+            <img src="/static/img/svg/logo.svg" alt="Logo" class="img-fluid logo" href="https://t.me/regulexper"><br>
+            <h1 class="text-center mx-3 my-0 head-text">Рукастые ребята со светлыми лицами</h1>
+        </div>
+        <nav>
+            <ul id="nav-lg">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="files.html">Файлы</a></li>
+                <li><a href="files.html">Мерч</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<header class="d-block d-sm-block d-md-block d-lg-none mobile-header">
+    <div class="row h-auto vh-25">
+        <div class="col-12 d-flex justify-content-center align-items-center" >
+            <img src="/img/svg/logo.svg" alt="Logo" class="img-fluid logo"><br>
+        </div>
+        <div class="col-12 d-flex justify-content-center align-items-center">
+            <h1 class="text-center text-white mx-3 my-0 head-text-mobile">Рукастые ребята со светлыми лицами</h1>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center mx-auto">
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="index.html" class="mobile-nav-a text-white">Главная</a>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="files.html" class="mobile-nav-a text-white">Файлы</a>
+            </div>
+
+            <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
+                <a href="files.html" class="mobile-nav-a text-white">Мерч</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container d-flex justify-content-center align-content-center d-block d-sm-block d-md-block d-lg-none">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="card mobile-card">
+                <img src="/static/img/svg/void.svg " class="card-img-top ml-3 mr-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Заглушка названия файла</h5>
+                    <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
+                    <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a><br><br>
+                    <span class="text-white text-center">
+                        Длинная текстовая заглушка описания файла Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac odio sodales diamornare viverra vel at mauris. Aliquam tempus porttitor nibhat blandit. olor sit amet, consectetur adipiscing elit. olor sit amet, consectetur adipiscing elit. olor sit amet, consectetur adipiscing elit, consectetur adipiscing elit. olor sit amet, consectetur adipiscing elit. olor sit amet, consectetur adipiscing elit
+                    </span>
+                </div>
+                <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--large-->
+<div class="container d-none d-lg-block">
+    <div class="row">
+        <div class="col-12 file-info">
+
+            <div class="row inner">
+
+                <div class="col-6 left-part">
+                  <img th:src="@{'/image/' + ${file.previewLink}}">
+                </div>
+
+                <div class="col-6 right-part">
+                    <span class="tittle-file-void" th:text="${file.name}">Заглушка названия файла</span><br>
+                    <a class="tag-link tag-link-size48" th:text="${file.mainTag}">Тег</a>
+                    <!--                    <a class="tag-link tag-link-size48">Длинный тег</a><br><br><br>-->
+                    <span class="lorem-ipsum-void" th:text="${file.fileDescription}">
+
+                    </span>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a th:href="@{/download/file/{id} (id=${file.attId}) }" class="tag-link-size48 float-end" download>Скачать</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid">
+    <div class="row foo">
+        <div class="col col-md-4 col-lg-4">
+            <h4 class="text-white">Мы в соцсетях:</h4><br>
+            <a href="https://t.me/makers2fron" class="text-white">Телеграм-канал</a><br><br>
+            <a href="https://t.me/concillor_bot" class="text-white">Телеграм-бот</a>
+        </div>
+
+        <div class="col col-md-4 col-lg-4">
+            <a href="send-files.html" class="text-white">Предложить файл</a><br><br>
+            <a href="donat.html" class="text-white">Поддержать проект</a>
+        </div>
+
+        <div class="col col-md-4 col-lg-4">
+            <h4 class="text-white text-end">Разработчик:</h4><br>
+            <img href="https://t.me/regulexper" class="qr-footer" src="/img/svg/developer_qr.svg" alt=" ">
+        </div>
+    </div>
+</footer>
+
+<script src="../static/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>
