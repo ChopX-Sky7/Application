@@ -1,10 +1,12 @@
 package Makers2Front.Application.entities;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,8 +14,6 @@ import java.util.Date;
 @Entity
 @Data
 public class FormMessage {
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,11 +25,13 @@ public class FormMessage {
     @Column(columnDefinition = "text")
     private String fileDescription;
 
+    @Column(columnDefinition = "text")
     private String fileLink;
 
     private long size;
 
-    private String email;
+    private String tags;
+    private String name;
     private String sendAt;
 
     private String category;

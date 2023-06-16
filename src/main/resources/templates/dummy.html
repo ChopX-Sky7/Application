@@ -16,6 +16,12 @@
 
 
 </head>
+<style>
+    .image{
+        width: 150px;
+        height: 150px;
+    }
+</style>
 <body>
 
 <header class="container-fluid d-none d-lg-block">
@@ -136,27 +142,22 @@
 -->
 
 <div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">3D-печать</h2>
-                </div>
-            </div>
+    <div class="row d-flex justify-content-center align-items-center">
+                    <div th:each="file: ${list}" class="card col-3 mx-2">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img  th:src="@{'/image/' + ${file.previewLink}}" class="image" alt="...">
+                        </div>
 
-            <div class="card-deck">
-                <div class="row" th:each="file: ${list}">
-                    <div class="card col pt-3">
-                        <img th:src="${file.previewLink}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title text-white" th:text="${file.name}">Заглушка названия файла</h5>
                             <a class="card-subtitle text-white tag-link" th:text="${file.mainTag}">Тег</a>
+                            <h6 th:text="${file.fileFullDescription}"></h6>
                         </div>
-                        <a th:href="@{/attachment/watch/{id}(id = ${file.attId})}" class="btn btn-primary mb-3">Скачать</a>
+                        <a th:href="@{/dummy/watch/{id}(id = ${file.attId})}" class="btn btn-primary mb-3">Скачать</a>
                     </div>
 
-                </div>
-                <div class="card col">
+<!--
+        <div class="card col">
                     <div class="card-body">
                         <div class="card-body ">
                             <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
@@ -164,300 +165,11 @@
 
                         </div>
                     </div>
-                </div>
+                </div>  -->
             </div>
         </div>
-    </div>
-</div>
-<!--
 
-<div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">3D-печать</h2>
-                </div>
-            </div>
 
-            <div class="card-deck">
-                <div class="row">
-                    <div class="card col pt-3   ">
-                        <img th:src="#{}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
-                                    найти <a href="files.html">здесь</a></h5><br><br>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br><br>
-
-<div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">Тактика</h2>
-                </div>
-            </div>
-
-            <div class="card-deck">
-                <div class="row">
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
-                                    найти <a href="files.html">здесь</a></h5><br><br>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br><br>
-<div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">Медицина</h2>
-                </div>
-            </div>
-
-            <div class="card-deck">
-                <div class="row">
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
-                                    найти <a href="files.html">здесь</a></h5><br><br>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br><br>
-<div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">Инструкции</h2>
-                </div>
-            </div>
-
-            <div class="card-deck">
-                <div class="row">
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
-                                    найти <a href="files.html">здесь</a></h5><br><br>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br><br>
-<div class="container d-none d-lg-block">
-    <div class="row ">
-        <div class="col-12 files-row">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center align-content-center">
-                    <h2 class="text-center files-row-tag">Другое</h2>
-                </div>
-            </div>
-
-            <div class="card-deck">
-                <div class="row">
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col pt-3   ">
-                        <img src="../img/svg/void.svg " class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Заглушка названия файла</h5>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Тег</a>
-                            <a class="card-subtitle text-white tag-link" href="void.html">Длинный тег</a>
-                        </div>
-                        <a href="file.html" class="btn btn-primary mb-3">Скачать</a>
-                    </div>
-
-                    <div class="card col">
-                        <div class="card-body">
-                            <div class="card-body ">
-                                <h5 class="card-title text-white text-center mt-5">Другие файлы этой категории вы можете
-                                    найти <a href="files.html">здесь</a></h5><br><br>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<br><br>
---->
 
 <footer class="container-fluid">
     <div class="row foo">

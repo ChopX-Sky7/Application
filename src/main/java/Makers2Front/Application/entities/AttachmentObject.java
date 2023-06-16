@@ -1,9 +1,11 @@
 
 package Makers2Front.Application.entities;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
+//import javax.persistence.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,13 +26,11 @@ public class AttachmentObject {
     private String previewName;
 
     private String name;
-    private String fileDescription;
+    private String fileFullDescription;
+    private String fileShortDescription;
     private String addedAt;
 
     private String mainTag;
-
-//    private User user;
-
 
     private String priority;
 

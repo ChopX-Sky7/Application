@@ -3,7 +3,7 @@ package Makers2Front.Application.controllers;
 import Makers2Front.Application.entities.FormMessage;
 import Makers2Front.Application.repos.MessageRepository;
 import Makers2Front.Application.services.impl.MessageServiceImpl;
-import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,10 +48,10 @@ public class FileUploadController {
         message.setSendAt();
         if (service.saveFile(file, message)){
             repo.save(message);
-            log.info("saved: {}" , message);}
+            log.info("message saved: {}" , message);}
         else {repo.save(message);
         log.info("saved without file: {}", message);}
-    return "redirect:feedback";
+    return "redirect:/";
     }
 
 

@@ -90,6 +90,7 @@ xmlns:th="http://www.thymeleaf.org">
                 </div>
 
                 <div class="col-6 right-part">
+                    <p th:text="${file.attId}"></p>
                     <span class="tittle-file-void" th:text="${file.name}">Заглушка названия файла</span><br>
                     <a class="tag-link tag-link-size48" th:text="${file.mainTag}">Тег</a>
                     <!--                    <a class="tag-link tag-link-size48">Длинный тег</a><br><br><br>-->

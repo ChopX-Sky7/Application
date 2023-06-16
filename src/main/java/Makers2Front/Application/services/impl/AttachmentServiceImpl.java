@@ -5,6 +5,7 @@ import Makers2Front.Application.entities.FormMessage;
 import Makers2Front.Application.repos.AttachmentRepository;
 import Makers2Front.Application.repos.MessageRepository;
 import Makers2Front.Application.services.AttachmentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,17 +16,18 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 @Service
+@Slf4j
 public class AttachmentServiceImpl implements AttachmentService {
 
     private MessageRepository msgRepo;
     private AttachmentRepository attRepo;
-    private ErrorLogServiceImpl logService;
+
 
     @Autowired
-    public AttachmentServiceImpl(MessageRepository msgRepo, AttachmentRepository attRepo, ErrorLogServiceImpl logService) {
+    public AttachmentServiceImpl(MessageRepository msgRepo, AttachmentRepository attRepo) {
         this.msgRepo = msgRepo;
         this.attRepo = attRepo;
-        this.logService = logService;
+
     }
 
 
@@ -40,7 +42,7 @@ public class AttachmentServiceImpl implements AttachmentService {
             byte[] bytes = file.getBytes();
             stream.write(bytes);
         } catch (Exception e) {
-            logService.log(e);
+           log.info("Catch exception: {}", e.getMessage());
         }
     }
 

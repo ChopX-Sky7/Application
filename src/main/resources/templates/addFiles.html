@@ -7,25 +7,22 @@
     <title>Title</title>
 </head>
 <body>
-<style>
-    li {
-        border: 1px black;
-    }
-</style>
+
 <div>
-    <ul th:each="message : ${messageList}">
-        <li>
-            <div>
+    <div th:each="message : ${messageList}" style="border: #FFFFFF 2px solid">
+
+            <div style="color: #0E0F1C">
                 <span th:text="${message.messageId}"></span><br>
                 <span th:text="${message.category}"></span><br>
+                <span th:text="${message.tags}"></span><br>
+                <span th:text="${message.fileDescription}"></span><br>
                 <span th:text="${message.sendAt}"></span><br>
-                <a th:href="@{/attachment/watch/{id}(id = ${message.messageId})}"> Открыть</a>
                 <a th:href="@{/download/file/{id}(id = ${message.messageId})}" download>Скачать</a>
                 <br><br>
             </div>
 
-        </li>
-    </ul>
+
+    </div>
 </div>
 
 </body>

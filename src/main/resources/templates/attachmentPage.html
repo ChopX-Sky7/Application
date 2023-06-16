@@ -7,22 +7,22 @@ xmlns:th="http://www.thymeleaf.org">
     <title>Title</title>
 </head>
 <body>
-<span th:text="${message.messageId}"></span><br>
-<span th:text="${message.isConfirmed}"></span><br>
-<span th:text="${message.hasFile}"></span><br>
-<span th:text="${message.fileDescription}"></span><br>
-<span th:text="${message.fileLink}"></span><br>
-<span th:text="${message.size}"></span><br>
-<span th:text="${message.email}"></span><br>
-<span th:text="${message.sendAt}"></span><br>
-<span th:text="${message.category}"></span><br>
+<span th:text="${message.attId}"></span><br>
+<span th:text="${message.name}"></span><br>
+<span th:text="${message.fileFullDescription}"></span><br>
+<span th:text="${message.fileShortDescription}"></span><br>
+<span th:text="${message.addedAt}"></span><br>
+
+<a th:href="@{/download/file/{id} (id=${message.attId}) }" class="tag-link-size48 float-end" download>Скачать</a>
 <hr>
 
 <form  th:action="@{/attachment/confirm/{id}(id = ${message.messageId})}"
  th:object="${att}" method="post" enctype="multipart/form-data">
 
     <input th:field="*{name}" type="text"/><br><br>
-    <input th:field="*{fileDescription}" type="text"/><br><br>
+    <input th:field="*{fileShortDescription}" type="text"/><br><br>
+    <textarea th:field="*{fileFullDescription}" type="text" rows="5"
+              cols="40"></textarea><br><br>
 
     <select th:field="*{mainTag}">
         <option th:value="3D-печать">3D-печать</option>
@@ -34,11 +34,10 @@ xmlns:th="http://www.thymeleaf.org">
 
     <input type="file" name="file" id="file" accept="image/png">
 
-    <input type="number" min="0" max="" th:field="*{isMain}" value="true">Добавить на главную?</input>
+    <input type="number" min="0" max="" th:field="*{priority}" value="true">Добавить на главную?</input>
     <br><br>
     <input type="submit">Подтвердить</input>
 </form>
-
 
 
 </form>

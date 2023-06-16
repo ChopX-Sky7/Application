@@ -26,9 +26,9 @@
         </div>
         <nav>
             <ul id="nav-lg">
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="files.html">Файлы</a></li>
-                <li><a href="files.html">Мерч</a></li>
+                    <li><a th:href="@{/home}">Главная</a></li>
+                <li><a th:href="@{/dummy}">Файлы</a></li>
+                <li><a th:href="@{/products}">Мерч</a></li>
             </ul>
         </nav>
     </div>
@@ -46,15 +46,15 @@
         <div class="row d-flex justify-content-center align-items-center mx-auto">
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="index.html" class="mobile-nav-a text-white">Главная</a>
+                <a th:href="@{/home}" class="mobile-nav-a text-white">Главная</a>
             </div>
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="files.html" class="mobile-nav-a text-white">Файлы</a>
+                <a th:href="@{/dummy}" class="mobile-nav-a text-white">Файлы</a>
             </div>
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="files.html" class="mobile-nav-a text-white">Мерч</a>
+                <a th:href="@{/products}" class="mobile-nav-a text-white">Мерч</a>
             </div>
         </div>
     </div>
@@ -247,8 +247,8 @@
         </div>
 
         <div class="col col-md-4 col-lg-4">
-            <a href="send-files.html" class="text-white">Предложить файл</a><br><br>
-            <a href="donat.html" class="text-white">Поддержать проект</a>
+            <a th:href="@{/feedback}" class="text-white">Предложить файл</a><br><br>
+            <a th:href="@{/donat}" class="text-white">Поддержать проект</a>
         </div>
 
         <div class="col col-md-4 col-lg-4">
@@ -258,6 +258,5 @@
     </div>
 </footer>
 <script src="/bootstrap/bootstrap.bundle.min.js"></script>
-<script></script>
 </body>
 </html>

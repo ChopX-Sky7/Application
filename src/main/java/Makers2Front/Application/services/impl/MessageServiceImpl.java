@@ -16,13 +16,11 @@ import java.io.FileOutputStream;
 @Slf4j
 public class MessageServiceImpl implements MessageService {
 
-    private final ErrorLogServiceImpl logService;
     private final MessageRepository repo;
 
 
     @Autowired
-    public MessageServiceImpl(ErrorLogServiceImpl logService, MessageRepository repo) {
-        this.logService = logService;
+    public MessageServiceImpl(MessageRepository repo) {
         this.repo = repo;
     }
 
@@ -42,7 +40,7 @@ public class MessageServiceImpl implements MessageService {
                 stream.write(bytes);
                 return true;
             } catch (Exception e) {
-                logService.log(e);
+                log.info("Catch exception: {}", e.getMessage());
                 return false;
             }
         }

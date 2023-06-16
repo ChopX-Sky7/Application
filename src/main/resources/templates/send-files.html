@@ -24,9 +24,9 @@
         </div>
         <nav>
             <ul id="nav-lg">
-                <li><a href="index.html">Главная</a></li>
-                <li><a th:href="@{/files}">Файлы</a></li>
-                <li><a href="files.html">Мерч</a></li>
+                <li><a th:href="@{/home}">Главная</a></li>
+                <li><a th:href="@{/dummy}">Файлы</a></li>
+                <li><a th:href="@{/products}">Мерч</a></li>
             </ul>
         </nav>
     </div>
@@ -34,7 +34,7 @@
 
 <header class="d-block d-sm-block d-md-block d-lg-none mobile-header">
     <div class="row h-auto vh-25">
-        <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="col-12 d-flex justify-content-center align-items-center" >
             <img src="/img/svg/logo.svg" alt="Logo" class="img-fluid logo"><br>
         </div>
         <div class="col-12 d-flex justify-content-center align-items-center">
@@ -44,15 +44,15 @@
         <div class="row d-flex justify-content-center align-items-center mx-auto">
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="index.html" class="mobile-nav-a text-white">Главная</a>
+                <a th:href="@{/home}" class="mobile-nav-a text-white">Главная</a>
             </div>
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="files.html" class="mobile-nav-a text-white">Файлы</a>
+                <a th:href="@{/dummy}" class="mobile-nav-a text-white">Файлы</a>
             </div>
 
             <div class="col-12 d-flex justify-content-center align-items-center mobile-nav-item">
-                <a href="files.html" class="mobile-nav-a text-white">Мерч</a>
+                <a th:href="@{/products}" class="mobile-nav-a text-white">Мерч</a>
             </div>
         </div>
     </div>
@@ -188,7 +188,7 @@
                       th:object="${formMessage}"
                       enctype="multipart/form-data"
                       th:action="${feedback}">
-                    <span class="label-text">Ваш e-mail:</span><input type="email" th:field="*{email}"
+                    <span class="label-text">Перечислите ключевые слова вашей идеи:</span><input type="text" th:field="*{tags}"
                                                                       class="send-input"><br><br>
 
                     <span class="label-text">Категория обращения:</span>
@@ -198,7 +198,7 @@
                         <option th:value="Медицина">Медицина</option>
                         <option th:value="Инструкции">Инструкции</option>
                         <option th:value="Другое">Другое</option>
-                    </select>
+                    </select><br><br>
                     <span class="label-text">Описание:</span><br><textarea class="tittle-input" minlength="100"
                                                                            maxlength="1000"
                                                                            placeholder="Краткое описание вашей идеи. От 100 до 1000 символов. Обратите внимание на текст справа!"
@@ -210,7 +210,7 @@
                                                                           name="file" id="file"
                                                                           value="Выбрать файл" title="" accept="multipart/x-zip"><br><br>
 
-                    <p class="text-white">Допустимы файлы форматов: <i>.dot .doc .docx .pdf .zip</i></p>
+                    <p class="text-white"><i>Обратите внимание, файл должен быть в формате .zip, без пароля и размером не более 512Мб</i></p>
                 </form>
             </div>
             <div class="col-6">
@@ -218,8 +218,7 @@
                     <p class="help-header">Советы:</p>
                     <ul class="helps">
                         <li>В общих чертах опишите идею, для чего предназначены, способы реализации.</li>
-                        <li>Если вы отправляете архив, опишите его структуру. Что и в какой папке находится. В описании
-                            перечислите теги или ключевые слова.
+                        <li>Если вы отправляете архив, опишите его структуру. Что и в какой папке находится.
                         </li>
                         <li>Идеи для 3D-печати должны быть опробованы вами лично! Напечатайте, оцените затраты пластика,
                             времени, труда, протестируйте модель, опишите результат. Модели без видео с тестами
@@ -229,7 +228,7 @@
                         <li>Модели хвостовиков для ВОГ, РГД, Ф1 не рассматриваются. Ими вы можете поделиться в нашем
                             <span
                                     class="chat-txt"><a href="https://t.me/concillor_bot"
-                                                        title="Доступ через бота."> чате.</a></span>.
+                                                        title="Доступ через бота."> чате</a></span>.
                         </li>
                     </ul>
                     <input type="submit" value="Помочь!" class="submit" form="send-form" onclick="">
@@ -259,7 +258,6 @@
         </div>
     </div>
 </footer>
-<script src="/scripts/send.js"></script>
 <script src="/bootstrap/bootstrap.bundle.min.js"></script>
 </body>
 </html>
